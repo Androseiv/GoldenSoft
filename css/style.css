@@ -345,14 +345,20 @@ body {
 .menu__features .menu__phone {
   transition: font-size 0.3s ease 0s;
 }
+.menu__features .menu__phone i {
+  transition: font-size 0.3s ease 0s;
+}
 .menu__features .menu__phone:hover {
   font-size: 20px;
   color: #0b5fd8;
 }
-.menu__features a i {
+.menu__features .menu__phone:hover i {
+  font-size: 32px !important;
+}
+.menu__features a:not(:first-child) i {
   transition: all 0.3s ease 0s;
 }
-.menu__features a i:hover {
+.menu__features a:hover:not(:first-child) i {
   color: #0d6eff;
   font-size: 32px !important;
 }
@@ -813,6 +819,103 @@ body._lock {
   line-height: 116.6666666667%;
   text-decoration-line: line-through;
   color: #454F5B;
+}
+
+.in-stock-label {
+  position: absolute;
+  top: 19px;
+  left: 12px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.in-stock-label::before {
+  content: "✔";
+  font-size: 15px;
+  display: inline-block;
+  color: green;
+}
+
+.in-stock-label::after {
+  content: "В наличии";
+  display: block;
+  position: absolute;
+  left: 20px;
+  padding-left: 8px;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 171%;
+  color: #454F5B;
+}
+
+.out-of-stock {
+  position: absolute;
+  top: 19px;
+  left: 12px;
+  width: 20px;
+  height: 20px;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.out-of-stock::before {
+  content: "✖";
+  font-size: 15px;
+  display: inline-block;
+  color: red;
+}
+
+.out-of-stock::after {
+  content: "Нет в наличии";
+  display: block;
+  position: absolute;
+  left: 20px;
+  padding-left: 8px;
+  white-space: nowrap;
+  font-size: 14px;
+  line-height: 171%;
+  color: #454F5B;
+}
+
+.sale-label {
+  position: absolute;
+  padding: 8px 10px;
+  top: 12px;
+  right: 12px;
+  background: white;
+}
+
+.sale-label::before {
+  content: "SALE";
+  white-space: nowrap;
+  color: black;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+}
+
+.present-label {
+  position: absolute;
+  top: 50px;
+  left: 12px;
+  padding: 6px 8px;
+  background: #fff url("../img/swiper2/gift.svg") no-repeat;
+  background-position: 8px center;
+}
+
+.present-label::after {
+  content: "Подарок";
+  white-space: nowrap;
+  padding-left: 20px;
+  font-size: 12px;
+  line-height: 14px;
+  color: black;
 }
 
 @media (max-width: 870px) {
